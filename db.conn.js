@@ -15,5 +15,15 @@ const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
 
 const modelDefiners = [modelBooking, modelGuest, modelRoom];
 modelDefiners.forEach((model) => model(sequelize));
+//console.log(sequelize.models);
+
+const { booking, guest, room } = sequelize.models;
+
+// booking N:1 room
+room.hasMany(booking);
+booking.belongsTo(room);
+// booking N:1 guest
+guest.hasMany(booking);
+booking.belongsTo(guest);
 
 export default sequelize;
