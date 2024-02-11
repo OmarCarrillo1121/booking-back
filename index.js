@@ -1,12 +1,12 @@
 import dotenv from "dotenv";
 import app from "./app.js";
-import sequelizeConn from "./db.conn.js";
+import sequelize from "./db.conn.js";
 
 dotenv.config();
 const port = process.env.PORT || "3001";
 
 try {
-  await sequelizeConn.authenticate();
+  await sequelize.sync({ force: true });
   console.log("Connection to DB established");
 } catch (error) {
   console.error("Error connection to DB");
