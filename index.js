@@ -6,7 +6,7 @@ dotenv.config();
 const port = process.env.PORT || "3001";
 
 try {
-  await sequelize.sync({ force: true });
+  await sequelize.sync({ alter: true });
   console.log("Connection to DB established");
 } catch (error) {
   console.error("Error connection to DB");

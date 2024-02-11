@@ -17,11 +17,11 @@ export const modelBooking = (sequelize) => {
       },
       checkIn: {
         type: DataTypes.DATE,
-        allowNull: false,
+        allowNull: true,
       },
       checkOut: {
         type: DataTypes.DATE,
-        allowNull: false,
+        allowNull: true,
       },
       deleted: {
         type: DataTypes.BOOLEAN,

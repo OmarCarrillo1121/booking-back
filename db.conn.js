@@ -17,7 +17,7 @@ const modelDefiners = [modelBooking, modelGuest, modelRoom];
 modelDefiners.forEach((model) => model(sequelize));
 //console.log(sequelize.models);
 
-const { booking, guest, room } = sequelize.models;
+export const { booking, guest, room } = sequelize.models;
 
 // booking N:1 room
 room.hasMany(booking);
